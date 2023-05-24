@@ -1,0 +1,102 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+
+  &__content{
+    padding: 24px;
+    border: 1px solid #E2E2E2;
+    border-radius: 4px;
+    background-color: $white-color;
+    width: 100%;
+    max-width: 398px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &.dark{
+      background-color: $black-color;
+      border: none;
+
+      .auth__top-icon{
+        background-color: $greyBackgroundIcon-color;
+
+        svg{
+          path{
+            fill: $greyIcon-color;
+          }
+        }
+      }
+
+      .auth__button{
+        background: linear-gradient($black-color, $black-color) padding-box,
+                    linear-gradient(0deg, #0095D9,#4DB5E4) border-box;
+      }
+    }
+  }
+
+  &__top{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__top-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightBlue-color;
+    background: #E6F4FB;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+
+    svg{
+      path{
+        fill: $blue-color;
+      }
+    }
+  }
+
+  &__text{
+    color: $greyText-color;
+  }
+
+  &__block{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__link{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+
+  &__link-text{
+    color: $blue-color;
+  }
+
+  &__button{
+    width: 100%;
+    padding: 12px 0;
+    background-color: $white-color;
+    color: $blue-color;
+    cursor: pointer;
+    border-radius: 4px;
+    background: linear-gradient($white-color, $white-color) padding-box,
+                linear-gradient(0deg, #0095D9,#4DB5E4) border-box;
+    border: 1px solid transparent;
+    @include transition;
+
+    &:hover{
+      box-shadow: 0px 5px 10px 2px rgba(0, 149, 217, 0.2);
+    }
+  }
+
+}

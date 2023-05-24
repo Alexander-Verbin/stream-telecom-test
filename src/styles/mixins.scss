@@ -1,0 +1,28 @@
+@use "sass:math";
+/* Стандартный transition для hover-анимаций */
+
+@mixin transition {
+  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -webkit-transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -moz-transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -o-transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -ms-transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+
+//Перевод пикселей в емы
+@function px-to-em($px, $context: 16) {
+  @return math.div($px, $context) * 1em;
+}
+//Перевод пикслей в проценты для line-height
+@function px-to-per($lh, $fs) {
+  @return math.div($lh, $fs) * 100%;
+}
+//Анимация
+@keyframes fadeIn {
+	0% {
+		opacity: 0; }
+	100% {
+		opacity: 1; }
+}
+//animation: fadeIn linear 0.3s forwards;

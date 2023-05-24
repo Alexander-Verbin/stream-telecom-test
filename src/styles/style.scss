@@ -1,0 +1,127 @@
+@import "mixins";
+
+//////////////////////Шрифты///////////////////
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+///////////////////////Цвета/////////////////////
+
+$blue-color: #1FA2DE;
+$lightBlue-color: #E6F4FB;
+$white-color: #fff;
+$black-color: #252525;
+$blackBackground-color: #2D2D2D;
+$greyText-color: #919191;
+$greyIcon-color: #767676;
+$greyBackgroundIcon-color: #404040;
+
+
+///ОБНУЛЕНИЕ/////////////////////////////////////////////////////////
+*,
+*::before,
+*::after {
+  font-family: 'Montserrat';
+  font-style: normal;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  background-color: #F5F5F5;
+
+  @include transition;
+
+  &.dark{
+    background-color: $blackBackground-color;
+    @include transition;
+  }
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+  
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+//////////UI-Kit/////////////
+.title{
+  font-weight: 500;
+  font-size: px-to-em(20);
+  line-height: px-to-per(28,20);
+  color: $black-color;
+  @include transition;
+
+  &.dark{
+    color: $white-color;
+    @include transition;
+  }
+}
+
+.text{
+  font-weight: 400;
+  font-size: px-to-em(16);
+  line-height: px-to-per(28,16);
+  color: $black-color;
+  &.dark{
+    color: $white-color;
+    @include transition;
+  }
+}
+
+.textSmall{
+  font-weight: 400;
+  font-size: px-to-em(14);
+  line-height: px-to-per(18,14);
+}
+
+
+
+
+@import './src/blocks/switcher/switcher';
+@import './src/blocks/auth/auth';
+@import './src/blocks/popup/popup';

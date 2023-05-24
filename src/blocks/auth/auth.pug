@@ -1,0 +1,24 @@
+mixin auth(modifier)
+  section.auth&attributes(attributes)
+    .auth__content 
+      .auth__top 
+        .auth__top-icon 
+          include img/icon.svg 
+        .auth__info  
+          h2.auth__title.title Настройки
+          p.auth__text.textSmall Логин: 77777777777
+      .auth__block
+        a(href="#").auth__link.popupOpen
+          p.auth__link-text.textSmall Двухфакторная аутентификация
+          .auth__link-icon 
+            include img/popupIcon.svg
+        p.auth__text.textSmall Не подключена
+      a(href="#" target="_blank").auth__link.popupOpen
+          p.auth__link-text.textSmall Настройки безопасности и API
+          .auth__link-icon 
+            include img/arrow.svg
+      a(href="#" target="_blank").auth__link.popupOpen
+          p.auth__link-text.textSmall Все протоколы интеграции
+          .auth__link-icon 
+            include img/arrow.svg
+      button(type="button").auth__button.textSmall Создать пароль для API
